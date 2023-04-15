@@ -115,6 +115,20 @@ def mainfile():
         time.sleep(0.8)
         main.printAll()
 
+#Add this later
+import re
 
+file = open('sum.txt')
+lst = list()
+total = 0
+
+for line in file:
+    number_string = re.findall("[0-9]+", line)
+    if len(number_string) == 0:
+        continue
+    else:
+        for value in number_string:
+             total += int(value)
+print(total)
 
 mainfile()
